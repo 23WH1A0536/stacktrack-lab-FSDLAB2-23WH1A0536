@@ -36,11 +36,11 @@ const handleSubmit = (e) => {
   fetch(`../api/tasks/${id}`,
   {
     method : "PUT",
-    Headers :{
+    headers :{
       "Content-Type" :  "application/json"
     },
     body : JSON.stringify(d)
-  }).then(r => resizeBy.json()).then(data => {
+  }).then(r => r.json()).then(data => {
     console.log("Updated details:", data)
     navigate("/")
   })

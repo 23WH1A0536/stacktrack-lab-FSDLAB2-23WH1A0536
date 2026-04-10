@@ -1,15 +1,21 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom'
 
 // TODO: Replace placeholder values with actual student and lab identifiers
 const STUDENT_ID = '23WH1A0536';
 const LAB_ID = 'FSDLAB2';
 
 function Home() {
+  const navigate = useNavigate()
+  const handleEdit = () =>{
+    const taskId = "1";
+    navigate(`/edit-task/${taskId}`)
+  }
   return (
     <div>
       <h1>Stack Track Lab</h1>
-      <p>Student ID: {"23WH1A0536"}</p>
-      <p>Lab ID: {"FSDLAB2"}</p>
+      <p>Student ID: {STUDENT_ID}</p>
+      <p>Lab ID: {LAB_ID}</p>
 
       {/* TODO: Replace this placeholder with your question set UI */}
       <button onClick={handleEdit}>Edit Task</button>
